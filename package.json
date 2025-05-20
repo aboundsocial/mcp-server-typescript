@@ -5,13 +5,21 @@
   "scripts": {
     "test": "ts-node test-composio.ts",
     "build": "tsc",
-    "test:build": "tsc && node dist/test-composio.js"
+    "test:build": "tsc && node dist/test-composio.js",
+    "dev": "next dev",
+    "test:api": "curl https://symmetrical-space-enigma-69r6xjggqv9jfjp6.github.dev/api/test-supabase"
   },
   "dependencies": {
     "ts-node": "^10.9.2",
     "typescript": "^5.8.3",
     "dotenv": "^16.4.5",
-    "composio-core": "^2.1.0",
-    "openai": "^4.67.3"
+    "composio-core": "^0.5.39",
+    "openai": "^4.67.3",
+    "@supabase/supabase-js": "^2.45.4",
+    "next": "^14.2.15"
+  },
+  "devDependencies": {
+    "@types/node": "^22.7.5",
+    "@types/react": "^18.3.11"
   }
 }
