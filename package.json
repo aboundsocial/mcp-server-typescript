@@ -7,7 +7,7 @@
     "build": "tsc",
     "test:build": "tsc && node dist/test-composio.js",
     "dev": "next dev",
-    "test:api": "curl https://symmetrical-space-enigma-69r6xjggqv9jfjp6.github.dev/api/test-supabase"
+    "test:api": "curl https://symmetrical-space-enigma-69r6xjggqv9jfjp6-3000.app.github.dev/api/test-supabase"
   },
   "dependencies": {
     "ts-node": "^10.9.2",
