@@ -20,9 +20,13 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       actions: ['GITHUB_GET_THE_AUTHENTICATED_USER'],
     });
 
-    // Define messages for ChatGPT
+    // Define messages for ChatGPT with a clearer system prompt
     const messages: ChatCompletionMessageParam[] = [
-      { role: 'system', content: 'You are a helpful assistant that can use tools.' },
+      {
+        role: 'system',
+        content:
+          'You are a helpful assistant that can use tools to interact with the Composio MCP Server. When using a tool, always provide a clear, natural language response to the user based on the tool result, followed by the tool result in a simplified format.',
+      },
       { role: 'user', content: message },
     ];
 
@@ -34,17 +38,22 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       tool_choice: 'auto',
     });
 
-    // Handle any tool calls (e.g., GitHub username fetch)
+    // Handle any tool calls (e.g., GitHub username fetch via Composio MCP Server)
     const result = await composioToolset.handleToolCall(response);
 
     // Extract the ChatGPT response
     let finalResponse = response.choices[0].message.content || '';
 
-    // If there’s a tool call result, include it
+    // If there’s a tool call result, process and append it
     if (Array.isArray(result) && typeof result[0] === 'string') {
       try {
         const parsed = JSON.parse(result[0]);
-        finalResponse += `\nTool Result: ${JSON.stringify(parsed, null, 2)}`;
+        // Extract the username from the tool result
+        const username = parsed?.data?.login || 'Unknown';
+        // Append a simplified tool result
+        finalResponse = finalResponse.trim()
+          ? `${finalResponse}\nTool Result: {\n  "username": "${username}"\n}`
+          : `Tool Result: {\n  "username": "${username}"\n}`;
       } catch (error) {
         finalResponse += '\nError parsing tool result.';
       }
