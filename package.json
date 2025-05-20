@@ -4,7 +4,7 @@
   "version": "1.0.0",
   "scripts": {
     "test": "ts-node test-composio.ts",
-    "build": "tsc && next build"
+    "build": "tsc && next build",
     "test:build": "tsc && node dist/test-composio.js",
     "dev": "next dev",
     "test:api": "curl https://symmetrical-space-enigma-69r6xjggqv9jfjp6-3000.app.github.dev/api/test-supabase"
