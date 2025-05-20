@@ -10,16 +10,19 @@
     "test:api": "curl https://symmetrical-space-enigma-69r6xjggqv9jfjp6-3000.app.github.dev/api/test-supabase"
   },
   "dependencies": {
-    "ts-node": "^10.9.2",
-    "typescript": "^5.8.3",
-    "dotenv": "^16.4.5",
-    "composio-core": "^0.5.39",
-    "openai": "^4.67.3",
     "@supabase/supabase-js": "^2.45.4",
-    "next": "^14.2.15"
+    "composio-core": "^0.5.39",
+    "dotenv": "^16.4.5",
+    "next": "^14.2.15",
+    "openai": "^4.67.3",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.3"
   },
   "devDependencies": {
     "@types/node": "^22.7.5",
-    "@types/react": "^18.3.11"
+    "@types/react": "^18.3.11",
+    "autoprefixer": "^10.4.19",
+    "postcss": "^8.4.38",
+    "tailwindcss": "^3.4.3"
   }
 }
