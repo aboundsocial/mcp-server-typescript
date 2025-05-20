@@ -1,11 +1,17 @@
 {
-  "type": "module",
-  "dependencies": {
-    "composio-core": "^0.5.39",
-    "dotenv": "^16.5.0"
+  "type": "commonjs",
+  "name": "mcp-server-typescript",
+  "version": "1.0.0",
+  "scripts": {
+    "test": "ts-node test-composio.ts",
+    "build": "tsc",
+    "test:build": "tsc && node dist/test-composio.js"
   },
-  "devDependencies": {
+  "dependencies": {
     "ts-node": "^10.9.2",
-    "typescript": "^5.8.3"
+    "typescript": "^5.8.3",
+    "dotenv": "^16.4.5",
+    "composio-core": "^2.1.0",
+    "openai": "^4.67.3"
   }
 }

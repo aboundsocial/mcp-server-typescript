@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "target": "ES2020", // Compatible with Node.js v20
+    "module": "CommonJS", // Force CommonJS for your script
+    "outDir": "./dist", // Output compiled JS to /dist
+    "rootDir": ".", // Source files in project root
+    "strict": true, // Enable strict type-checking
+    "esModuleInterop": true, // Support CommonJS imports
+    "skipLibCheck": true, // Skip checking declaration files
+    "forceConsistentCasingInFileNames": true, // Consistent file names
+    "moduleResolution": "node" // Node.js module resolution
+  },
+  "include": ["*.ts"], // Include all .ts files
+  "exclude": ["node_modules", "dist"] // Exclude these
+}
