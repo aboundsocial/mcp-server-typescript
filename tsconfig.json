@@ -1,47 +1,7 @@
 {
-  "compilerOptions": {
-    "target": "ES2020", // Compatible with Node.js v20
-    "module": "CommonJS", // Force CommonJS for your scripts
-    "outDir": "./dist", // Output compiled JS to /dist
-    "rootDir": ".", // Source files in project root
-    "strict": true, // Enable strict type-checking
-    "esModuleInterop": true, // Support CommonJS imports
-    "skipLibCheck": true, // Skip checking declaration files
-    "forceConsistentCasingInFileNames": true, // Consistent file names
-    "moduleResolution": "node", // Node.js module resolution
-    "baseUrl": ".", // Base for path aliases
-    "paths": {
-      "@/*": [
-        "./*"
-      ], // Map @/ to project root
-      "@/lib/*": [
-        "lib/*"
-      ] // Map @/lib/ to ./lib/
-    },
-    "jsx": "preserve", // Support JSX/TSX for Next.js
-    "allowJs": true, // Allow JavaScript files (optional for Next.js)
-    "types": [
-      "node"
-    ] // Include Node.js types for process.env
-    ,
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
-    "noEmit": true,
-    "incremental": true,
-    "resolveJsonModule": true,
-    "isolatedModules": true
-  },
-  "include": [
-    "*.ts", // Root-level .ts files (e.g., test-composio.ts)
-    "lib/**/*.ts", // Library files (e.g., lib/supabaseClient.ts)
-    "pages/**/*.ts", // Next.js API routes (e.g., pages/api/test-supabase.ts)
-    "pages/**/*.tsx" // Support TSX if you have React components
-  ],
-  "exclude": [
-    "node_modules", // Exclude dependencies
-    "dist" // Exclude compiled output
+  "files": [],
+  "references": [
+    { "path": "./tsconfig.app.json" },
+    { "path": "./tsconfig.node.json" }
   ]
 }
